@@ -3,8 +3,10 @@ Tools of stLFR(Single Tube Long Fragment Reads) Resequencing data analysis.
 
 Introduction
 ----------------
+
     Tools of stLFR(Single Tube Long Fragment Reads) data analysis.
     stLFR FAQs is directed to bgi-MGITech_Bioinfor@genomics.cn.
+    Download source code package from https://github.com/MGI-tech-bioinformatics/stLFR_V1.3.
 
 Versions
 ----------------
