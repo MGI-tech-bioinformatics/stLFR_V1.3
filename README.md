@@ -1,5 +1,5 @@
 # stLFR_V1.3
-Tools of stLFR(Single Tube Long Fragment Reads) Resequencing data analysis.
+Pipeline of stLFR(Single Tube Long Fragment Reads) Resequencing data analysis.
 
 Introduction
 ----------------
@@ -99,7 +99,7 @@ Result
       16. Fragment per barcode distribution figure: *.frag_per_barcode.pdf
       17. variant CIRCOS:                           *.circos.svg, *.circos.png, *.legend_circos.pdf
       
-    Meanwhile, the following shows the directory structure when the process is executed:  
+    Meanwhile, the following shows the directory structure when the process is executed:
        |-- 01.filter   // for align
        |   |__ SAMPLE
        |       |__ SAMPLE.clean_1.fq.gz
@@ -140,8 +140,13 @@ Result
 
 Additional Information
 ----------------
-    We provide stLFR_ReSeq workflow by Docker since stLFR_ReSeq_v1.3. 
-    If docker is not aviable, please try stLFR_V1.2 (https://github.com/MGI-tech-bioinformatics/stLFR_V1.2) or contact us for more information.
+    We provide stLFR_ReSeq workflow by Docker since stLFR_V1.3.
+    If you like to use clean FASTQ file to run other pipelines or bioinformatics softwares(e.g. de novo assembly or metagenomics), you could get the FASTQ files from subdirectory(named after sample name) in the 01.filter directory of result, such as:
+   
+   |-- 01.filter 
+       |__ SAMPLE
+           |__ SAMPLE.clean_1.fq.gz
+           |__ SAMPLE.clean_2.fq.gz
 
 License
 ----------------
