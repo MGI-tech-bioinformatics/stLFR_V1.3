@@ -28,7 +28,7 @@ Setup
       From BGI Cloud Drive:
         https://pan.genomics.cn/ucdisk/s/Jvmuii
       Or from OneDrive:
-        https://dwz.cn/ZPlGA0eJ
+        https://bgitech-my.sharepoint.com/:f:/g/personal/raojunhua_genomics_cn/EsOCbGxJj7BAuGUkcu5-RZMBYgAMQ-5lWhwAdZrvS4aPNA?e=Oq5q6h
     Notes:
       1. Please make sure that you run the docker container with at least 45GB memory and 30 CPU.
       2. The input is sample list and output directory which descripted below (Main progarm arguments).
@@ -98,6 +98,45 @@ Result
       15. Fragment length distribution figure:      *.fraglen_distribution_min5000.pdf
       16. Fragment per barcode distribution figure: *.frag_per_barcode.pdf
       17. variant CIRCOS:                           *.circos.svg, *.circos.png, *.legend_circos.pdf
+      
+    Meanwhile, the following shows the directory structure when the process is executed:  
+       |-- 01.filter   // for align
+       |   |__ SAMPLE
+       |       |__ SAMPLE.clean_1.fq.gz
+       |       |__ SAMPLE.clean_2.fq.gz
+       |-- 02.align    // for phase, cnv and sv
+       |   |__ SAMPLE
+       |       |__ SAMPLE.sortdup.bqsr.bam
+       |       |__ SAMPLE.sortdup.bqsr.bam.bai
+       |       |__ SAMPLE.sortdup.bqsr.bam.HaplotypeCaller.vcf.gz
+       |       |__ SAMPLE.sortdup.bqsr.bam.HaplotypeCaller.vcf.gz.tbi
+       |-- 03.phase    // for cnv
+       |   |__ SAMPLE
+       |       |__ phasesplit
+       |           |__ hapblock_SAMPLE_CHROMOSOM
+       |-- 04.cnv
+       |   |__ SAMPLE
+       |       |__ SAMPLE.CNV.result.xls
+       |-- 05.sv
+       |   |__ SAMPLE
+       |       |__ SAMPLE.SVresult.xls
+       |__ file
+           |__ SAMPLE
+               |-- alignment
+               |   |__ SAMPLE.sortdup.bqsr.bam
+               |   |__ SAMPLE.sor
+               |-- CNV
+               |   |__ SAMPLE.CNV.result.xls
+               |-- haplotype
+               |   |__ SAMPLE.hapblock
+               |-- sequence
+               |   |__ SAMPLE.clean_1.fq.gz
+               |   |__ SAMPLE.clean_2.fq.gz
+               |-- SV
+               |   |__ SAMPLE.SV.result.xls
+               |__ variant
+                   |__ SAMPLE.sortdup.bqsr.bam.HaplotypeCaller.vcf.gz
+                  
 
 Additional Information
 ----------------
